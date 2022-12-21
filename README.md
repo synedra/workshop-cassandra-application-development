@@ -40,7 +40,7 @@ Mind that, as mentioned already, _the default Token auto-created for you when
 creating the database is not powerful enough for us today._
     </details>
     
-#### Gitpod
+### Gitpod
 
 First, open this repo in Gitpod by right-clicking the following button ("open in new tab"):
 
@@ -52,7 +52,7 @@ _Note_: The next steps are to be executed _within the Gitpod IDE._
 
 #### Install and configure the Astra CLI
 
-In a console within Gitpod, install Astra CLI with
+In a terminal within Gitpod, install Astra CLI with
 
 ```
 curl -Ls "https://dtsx.io/get-astra-cli" | bash
@@ -128,7 +128,7 @@ To close `cqlsh` and get back to the shell prompt, execute the `EXIT` command.
 
 </details>
 
-#### Download the Secure Connect Bundle
+### Download the Secure Connect Bundle
 
 Besides the "Client ID" and the "Client Secret" from the Token, the drivers also need the "Secure Connect Bundle" zipfile to work (it contains proxy and routing information as well as the necessary certificates).
 
@@ -146,7 +146,7 @@ You can check it has been saved with `ls *.zip`.
 astra db create-dotenv workshops -k sensor_data -r us-east1
 ```
 
-Finally, `source` the .env file:
+Read the settings from the .env file into your environment:
 
 ```bash
 for line in `cat .env | grep -v ']'`; do export $line ; done
