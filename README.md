@@ -26,7 +26,7 @@ To create the token, click on the "..." menu next to your database in the main
 Astra databases dashboard and choose "Generate token". Then make sure you select the "DB Administrator" role.
 _Download or note down all components of the token before navigating away:
 these will not be shown again._
-[See here](https://awesome-astra.github.io/docs/pages/astra/create-token/)
+    <a href="https://awesome-astra.github.io/docs/pages/astra/create-token/">See here</a>
 for more on token creation.
 
 
@@ -44,9 +44,9 @@ creating the database is not powerful enough for us today._
 
 First, open this repo in Gitpod by right-clicking the following button ("open in new tab"):
 
-<a href="https://gitpod.io/#https://github.com/datastaxdevs/workshop-cassandra-application-development"><img src="images/open_in_gitpod.svg?raw=true" /></a>
+<a href="https://gitpod.io/#https://github.com/synedra/workshop-cassandra-application-development"><img src="images/open_in_gitpod.svg?raw=true" /></a>
 
-In a couple of minutes you will have your Gitpod IDE up and running, with this repo cloned, ready and waiting for you (you may have to authorize the Gitpod single-sign-on to continue).
+You may need to authorize the Gitpod using your Github account, but once you've done that it'll start building.  In a couple of minutes you will have your Gitpod IDE up and running, with this repo cloned, ready and waiting for you.
 
 _Note_: The next steps are to be executed _within the Gitpod IDE._
 
@@ -142,18 +142,14 @@ You can check it has been saved with `ls *.zip`.
 
 #### Configure the dot-env file
 
-Copy the template dot-env and edit it with:
-
 ```
-cp .env.sample .env ; gp open .env
+astra db create-dotenv workshops -k sensor_data -r us-east1
 ```
-
-Replace the Client ID and Client Secret strings from the database Token.
 
 Finally, `source` the .env file:
 
 ```bash
-source .env
+for line in `cat .env | grep -v ']'`; do export $line ; done
 ```
 
 ## 2 & 3. Now to the exercises!
