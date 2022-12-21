@@ -1,12 +1,5 @@
 # workshop-cassandra-application-development
 
-1. [Setup](#1-database-setup)
-
-- [Python](python/Python_README.md)
-- [Java](java/Java_README.md)
-
-_Step #2 and #3 are under the Java and Python paths.  You must pick either Java or Python before proceeding to Steps #2 and #3._
-
 Learn about drivers, connectivity and requests by running a simple API with
 Apache Cassandra/Astra DB as its data backend. The practice is available in both
 Python and Java.
@@ -22,34 +15,20 @@ Besides some knowledge of the [example domain](https://www.datastax.com/learn/da
 - [Cassandra Fundamentals](https://github.com/datastaxdevs/workshop-cassandra-fundamentals)
 - [Data Modeling with Cassandra](https://github.com/datastaxdevs/workshop-cassandra-data-modeling)
 
-#### Database pre-requisites
-
-It is assumed in the following that you already have created your [Astra DB instance](https://github.com/datastaxdevs/workshop-cassandra-fundamentals#4-create-your-astra-db-instance) as instructed in the first episode, and that you have a valid "DB Administrator" Token.
-**Note**: the Token that is created with the database does not have all permissions we need, so you _need_ to manually [create a Token](https://awesome-astra.github.io/docs/pages/astra/create-token/) with the higher "DB Administrator" permission and use it in what comes next.
-
-_In case you haven't your Astra DB yet, go ahead and create it now for free by clicking here:_
-
-<a href="https://astra.dev/yt-8-10"><img src="images/create_astra_db_button.png?raw=true" /></a>
-
-> _Tip_: call the database `workshops` and the keyspace `sensor_data`.
-
-_In case you already have a database `workshops` but no `sensor_data` keyspace,
-simply add it using the "Add Keyspace" button on the bottom right hand corner of your DB dashboard._
-
-## Steps
+# Steps
 
 ## 1. Setup
-
-#### Astra DB "Administrator" token
-
+<details>
+    <summary>DB Administrator Token Creation</summary>
 If you don't have a "DB Administrator" token yet, log in to your Astra DB
 and create a token with this role.
 To create the token, click on the "..." menu next to your database in the main
-Astra dashboard and choose "Generate token". Then make sure you select the "DB Administrator" role.
+Astra databases dashboard and choose "Generate token". Then make sure you select the "DB Administrator" role.
 _Download or note down all components of the token before navigating away:
 these will not be shown again._
 [See here](https://awesome-astra.github.io/docs/pages/astra/create-token/)
 for more on token creation.
+
 
 > **⚠️ Important**
 > ```
@@ -59,7 +38,8 @@ for more on token creation.
 
 Mind that, as mentioned already, _the default Token auto-created for you when
 creating the database is not powerful enough for us today._
-
+    </details>
+    
 #### Gitpod
 
 First, open this repo in Gitpod by right-clicking the following button ("open in new tab"):
